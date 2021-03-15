@@ -267,22 +267,15 @@ class AlivePests(Pests):
 
     def eat(self):
         for pest in range(self.quantity):
-            tomato_bush.tomatoes.pop(-1)
-            if len(tomato_bush.tomatoes) < 0:
+            tomato_bush.tomatoes.pop()
+            if len(tomato_bush.tomatoes) == 0:
                 print("In the Garden have no vegetables")
-            elif len(tomato_bush.tomatoes) == 0:
-                print('In the Garden also has no vegetables')
-            else:
-                print("The Garden has vegetables")
+           
 
         for pest in range(self.quantity):
-            apple_tree.apples.pop(-1)
-            if len(apple_tree.apples) < 0:
+            apple_tree.apples.pop()
+            if len(apple_tree.apples) == 0:
                 print("In the Garden have no fruits")
-            elif len(apple_tree.apples) == 0:
-                print('In the garden also has no fruits')
-            else:
-                print("The Garden has fruits")
 
     def __repr__(self):
         return f'{self.pests_type} is {self.quantity}'
